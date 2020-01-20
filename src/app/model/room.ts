@@ -4,6 +4,6 @@ export interface Room {
   nameHost?: string;
   description?: string;
   priceRoom?: string;
-  imgUrls?: string;
+  imageUrls?: string;
   orderForms?: any;
 }
