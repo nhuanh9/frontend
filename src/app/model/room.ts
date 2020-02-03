@@ -1,5 +1,6 @@
 export interface Room {
   id?: string;
+  nameRoom?: string;
   nameHouse?: string;
   nameHost?: string;
   description?: string;
