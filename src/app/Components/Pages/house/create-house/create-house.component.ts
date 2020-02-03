@@ -96,7 +96,7 @@ export class CreateHouseComponent implements OnInit {
       this.userService.userDetail(value.id + '').subscribe(result => {
         this.house.hostName = result.username;
         this.houseService.create(this.house).subscribe(() => {
-          console.log('Thêm thành công!');
+          alert('Thêm thành công!');
           this.router.navigate(['/']);
         }, error1 => {
           console.log('Lỗi ' + error1);

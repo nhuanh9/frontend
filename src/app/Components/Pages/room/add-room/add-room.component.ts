@@ -84,7 +84,7 @@ export class AddRoomComponent implements OnInit {
       this.userService.userDetail(value.id + '').subscribe(result => {
         this.room.nameHost = result.username;
         this.houseService.createRoom(this.house.id, this.room).subscribe(() => {
-          console.log('Thêm room thành công!');
+          alert('Thêm room thành công!');
           this.router.navigate(['/']);
         }, error1 => {
           console.log('Lỗi ' + error1);

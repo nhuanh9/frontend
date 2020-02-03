@@ -110,7 +110,7 @@ export class EditHouseComponent implements OnInit {
           imageUrls: this.arrayPicture
         };
         this.houseService.edit(house, this.idHouse).subscribe(() => {
-          console.log('Sửa thành công!');
+          alert('Sửa thành công!');
           this.router.navigate(['/']);
         }, error1 => {
           console.log('Lỗi ' + error1);

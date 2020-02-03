@@ -45,6 +45,7 @@ export class EditRoomComponent implements OnInit {
       this.roomService.detail(id).subscribe(next => {
         this.room = next;
         this.idRoom = this.room.id;
+        this.arrayPicture = this.room.imageUrls;
       }, error1 => {
         console.log(error1);
       });
@@ -83,7 +84,7 @@ export class EditRoomComponent implements OnInit {
           imageUrls: this.arrayPicture
         };
         this.roomService.edit(room, this.idRoom).subscribe(() => {
-          console.log('Sửa thành công!');
+          alert('Sửa thành công!');
           this.router.navigate(['/']);
         }, error1 => {
           console.log('Lỗi ' + error1);
@@ -108,7 +109,7 @@ export class EditRoomComponent implements OnInit {
       },
       () => {
         uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
-          this.arrayPicture += downloadURL + ' ';
+          this.arrayPicture = downloadURL;
           console.log(this.arrayPicture);
         });
       }
