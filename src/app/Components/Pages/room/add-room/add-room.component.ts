@@ -61,7 +61,7 @@ export class AddRoomComponent implements OnInit {
     this.authenticationService.currentUser.subscribe(value => {
       this.room = {
         nameHouse: this.house.nameHouse,
-        nameRoom: this.createForm.get('nameHouse').value,
+        nameRoom: this.createForm.get('nameRoom').value,
         priceRoom: this.createForm.get('priceRoom').value,
         description: this.createForm.get('description').value,
         imageUrls: this.arrayPicture

@@ -1,7 +1,7 @@
 <div class="row m-5 detail">
   <div class="col-md-6 imageProduct">
     <p><u>Home >> {{house.nameHouse}}</u></p>
-    <img width="80%" src="{{house.imageUrls}}" class="imgProduct">
+    <img width="100%" src="{{house.imageUrls}}" class="imgProduct mb-3">
   </div>
   <div class="col-md-6">
     <div class="order-in-detail">
@@ -29,30 +29,9 @@
 </div>
 
 <div class="row m-5 room" *ngFor="let room of rooms;">
-  <!--  <div class="col-xs-6 col-sm-4 col-lg-3 mt-3 house " style="padding-right: 0px;"-->
-  <!--       *ngIf="room.nameHouse === house.nameHouse">-->
-  <!--    <div class="thumbnail">-->
-  <!--      <a [routerLink]="['detail-room', room.id]">-->
-  <!--        <img width="100%" height="220px" style="border-radius: 2px" src="{{room.imageUrls}}" class="imgProduct">-->
-  <!--      </a>-->
-  <!--      <div style="z-index: 2; position: inherit;">-->
-  <!--        <div class="productName">-->
-  <!--          <a [routerLink]="['/user/room/detail-room', room.id]"-->
-  <!--             style="color: #000000;">{{room.nameRoom.split(' ')[0]}}</a>-->
-  <!--        </div>-->
-  <!--        <div class="price">-->
-  <!--          {{room.priceRoom}}$-->
-  <!--        </div>-->
-  <!--        <div class="order">-->
-  <!--          <a [routerLink]="['/user/room/detail-room', room.id]" class="btn btn-secondary"-->
-  <!--             style="width: 100px;">Detail</a>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
   <div class="row" *ngIf="room.nameHouse === house.nameHouse">
     <div class="col-3">
-      <img src="{{room.imageUrls}}" width="100%" alt="imgNha1">
+      <img src="{{room.imageUrls}}" class="m-3" width="100%" alt="imgNha1">
     </div>
     <div class="col-9">
       <div class="row">
