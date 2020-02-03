@@ -19,7 +19,6 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { LoginComponent } from './Components/Pages/users/login/login.component';
 import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
-import { EditHouseComponent } from './Components/Pages/house/edit-house/edit-house.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { EditHouseComponent } from './Components/Pages/house/edit-house/edit-hou
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent
+    ListRoomComponent,
   ],
   imports: [
     BrowserModule,

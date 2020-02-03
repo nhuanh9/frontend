@@ -1,0 +1,27 @@
+<div class="row m-5 detail">
+  <div class="col-md-8 imageProduct">
+    <p><u>Home >> {{room.nameHouse}} >> {{room.nameHouse+room.id}}</u></p>
+    <img width="100%" src="{{room.imageUrls}}" class="imgProduct">
+
+  </div>
+  <div class="col-md-4">
+    <div class="order-in-detail">
+      <div class="m-3">
+        <b><h2>{{room.nameHouse+room.id}}</h2></b>
+        <p><b>100$</b>/đêm</p>
+      </div>
+    </div>
+    <div class="info-house mt-3">
+      <div class="m-3">
+        <p>Chủ nhà: {{room.nameHost}}</p>
+        <p>Mô tả: Đẹp{{room.description}} </p>
+      </div>
+    </div>
+    <a class="btn btn-danger" [routerLink]="['/user/house/edit-house', room.id]">
+      Sửa Phòng
+    </a>
+    <a class="btn btn-info ml-3" [routerLink]="['/user/house/edit-house', room.id]">
+      Đặt Phòng
+    </a>
+  </div>
+</div>
