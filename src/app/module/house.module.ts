@@ -20,7 +20,7 @@ const routing: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: ':id/create-room',
+    path: 'detail-house/:id/create-room',
     component: AddRoomComponent,
     canActivate: [AuthGuard]
   },

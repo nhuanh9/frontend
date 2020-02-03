@@ -1,4 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {House} from '../../../../model/House';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CategoryHouse} from '../../../../model/categoryHouse';
+import {HouseService} from '../../../../Services/house.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {AngularFireDatabase} from '@angular/fire/database';
+import {CategoryHouseService} from '../../../../Services/category-house.service';
+import {AuthenticationService} from '../../../../Services/authentication.service';
+import {UserService} from '../../../../Services/user.service';
+import * as firebase from 'firebase';
+import {Room} from '../../../../model/room';
+import {RoomService} from '../../../../Services/room.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-add-room',
@@ -7,9 +20,99 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRoomComponent implements OnInit {
 
-  constructor() { }
+  house: House;
+  arrayPicture = '';
+  createForm: FormGroup;
+  room: Room;
+  sub: Subscription;
+  listCategoryHouse: CategoryHouse[];
 
-  ngOnInit() {
+  constructor(private houseService: HouseService,
+              private  router: Router,
+              private db: AngularFireDatabase,
+              private fb: FormBuilder,
+              private categoryHouse: CategoryHouseService,
+              private authenticationService: AuthenticationService,
+              private userService: UserService,
+              private activateRoute: ActivatedRoute,
+              private roomService: RoomService
+              // private categoryRoom: CategoryRoomService,
+  ) {
   }
 
+  ngOnInit() {
+    this.sub = this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
+      const id = paraMap.get('id');
+      this.houseService.detail(id).subscribe(next => {
+        this.house = next;
+      }, error1 => {
+        console.log(error1);
+      });
+    });
+    this.createForm = this.fb.group({
+      hostName: ['', [Validators.required]],
+      nameRoom: ['', [Validators.required]],
+      priceRoom: ['', [Validators.required]],
+      description: ['', [Validators.required]]
+    });
+  }
+
+  transferFormData() {
+    this.authenticationService.currentUser.subscribe(value => {
+      this.room = {
+        nameHouse: this.house.nameHouse,
+        nameRoom: this.createForm.get('nameHouse').value,
+        priceRoom: this.createForm.get('priceRoom').value,
+        description: this.createForm.get('description').value,
+        imageUrls: this.arrayPicture
+      };
+      this.userService.userDetail(value.id + '').subscribe(result => {
+        this.room.nameHost = result.username;
+      });
+    });
+  }
+
+  createRoom() {
+    this.authenticationService.currentUser.subscribe(value => {
+      this.room = {
+        nameHouse: this.house.nameHouse,
+        nameRoom: this.createForm.get('nameRoom').value,
+        priceRoom: this.createForm.get('priceRoom').value,
+        description: this.createForm.get('description').value,
+        imageUrls: this.arrayPicture
+      };
+      this.userService.userDetail(value.id + '').subscribe(result => {
+        this.room.nameHost = result.username;
+        this.houseService.createRoom(this.house.id, this.room).subscribe(() => {
+          console.log('Thêm room thành công!');
+          this.router.navigate(['/']);
+        }, error1 => {
+          console.log('Lỗi ' + error1);
+        });
+      });
+    });
+  }
+
+  saveImg(value) {
+    const file = value.target.files;
+    const metadata = {
+      contentType: 'image/jpeg',
+    };
+    const uploadTask = firebase.storage().ref('img/' + Date.now()).put(file[0], metadata);
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        // in progress
+        const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+          this.arrayPicture += downloadURL + ' ';
+          console.log(this.arrayPicture);
+        });
+      }
+    );
+  }
 }
