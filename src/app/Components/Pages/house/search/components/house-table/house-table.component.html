@@ -4,7 +4,6 @@
     <th>Address</th>
     <th>Bathroom</th>
     <th>Bedroom</th>
-    <th>Price</th>
   </tr>
   <tbody>
   <tr *ngFor="let house of filteredHouses | filter: searchByKeyword: 'nameHouse'">
@@ -12,7 +11,6 @@
     <td>{{ house.address}}</td>
     <td>{{ house.amountBathRoom}}</td>
     <td>{{ house.amountBedRoom}}</td>
-    <td>{{ house.price}}</td>
   </tr>
   </tbody>
 </table>

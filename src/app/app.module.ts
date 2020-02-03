@@ -12,14 +12,12 @@ import {RegisterComponent} from './Components/Pages/users/register/register.comp
 import {CarouselComponent} from './Components/Blocks/carousel/carousel.component';
 import {FooterComponent} from './Components/Blocks/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
-import {DetailHouseComponent} from './Components/Pages/house/detail-house/detail-house.component';
-import {CreateHouseComponent} from './Components/Pages/house/create-house/create-house.component';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { LoginComponent } from './Components/Pages/users/login/login.component';
 import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
-import { CreateOrderComponent } from './Components/Pages/room/Order/create-order/create-order.component';
+import { UpdateUserProfileComponent } from './Components/Pages/users/update-user-profile/update-user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +30,7 @@ import { CreateOrderComponent } from './Components/Pages/room/Order/create-order
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent,
+    ListRoomComponent
   ],
   imports: [
     BrowserModule,

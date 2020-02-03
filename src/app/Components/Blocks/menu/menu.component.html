@@ -23,6 +23,9 @@
     </form>
     <div *ngIf="currentUser">
       <a (click)="logout()" class="btn btn-outline-light">Log Out</a>
+      <a [routerLink]="['/user/update-profile',currentUser.id]" class="btn btn-outline-light ml-2">
+        Cập nhật TTCN
+      </a>
     </div>
   </div>
 </nav>

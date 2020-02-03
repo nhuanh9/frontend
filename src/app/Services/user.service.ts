@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 import {User} from '../model/user';
@@ -37,5 +37,21 @@ export class UserService {
 
   userDetail(id: string): Observable<User> {
     return this.http.get<User>(API_URL + `/users/${id}`);
+  }
+
+  getUserProfile(id: string): Observable<User> {
+    return this.http.get<User>(API_URL + `/users/${id}`);
+  }
+
+  updateUserProfile(id: number, user: User): Observable<User> {
+    return this.http.put<User>(API_URL + `/users/${id}`, user);
+  }
+
+  changePassword(user: User, id: number): Observable<User> {
+    return this.http.post<User>(API_URL + `/change-password/${id}`, user);
+  }
+
+  getUserList(): Observable<User[]> {
+    return this.http.get<User[]>(API_URL + '/users');
   }
 }
