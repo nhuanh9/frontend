@@ -19,6 +19,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { LoginComponent } from './Components/Pages/users/login/login.component';
 import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
+import { CreateOrderComponent } from './Components/Pages/room/Order/create-order/create-order.component';
 
 @NgModule({
   declarations: [

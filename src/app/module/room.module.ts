@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {DetailRoomComponent} from '../Components/Pages/room/detail-room/detail-room.component';
 import {AddRoomComponent} from '../Components/Pages/room/add-room/add-room.component';
 import {EditRoomComponent} from '../Components/Pages/room/edit-room/edit-room.component';
+import {CreateOrderComponent} from '../Components/Pages/room/Order/create-order/create-order.component';
 
 const routing: Routes = [
   {
@@ -18,12 +19,18 @@ const routing: Routes = [
     component: EditRoomComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: ':id/createOrder',
+    component: CreateOrderComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
   declarations: [
     DetailRoomComponent,
-    EditRoomComponent
+    EditRoomComponent,
+    CreateOrderComponent
   ],
   imports: [
     CommonModule,

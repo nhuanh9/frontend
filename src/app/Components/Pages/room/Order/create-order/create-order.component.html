@@ -1,0 +1,47 @@
+<div class="row container-fluid mt-3 ml-1" >
+  <div class="col-2"></div>
+  <div class="card text-center register col-lg-8 " style="background: #ffffff !important;">
+    <div class=" text-center mt-2">
+      <h2>Đặt phòng</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="createForm" (ngSubmit)="createOrder()" class="form-group">
+        <div class="text-left">
+          <label>Tên người đặt</label>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="nameGuest" placeholder="Input your name...">
+          <div class="alert alert-danger mt-1" role="alert"
+               *ngIf="createForm.get('nameGuest').invalid && createForm.get('nameGuest').touched">
+            Chưa nhập tên!
+          </div>
+        </div>
+        <div class="text-left">
+          <label>Số điện thoại</label>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="phoneNumber"
+                 placeholder="Phone....">
+          <div class="alert alert-danger mt-1" role="alert"
+               *ngIf="createForm.get('phoneNumber').invalid && createForm.get('phoneNumber').touched">
+            Chưa nhập SDT!
+          </div>
+        </div>
+        <div class="text-left">
+          <label>Từ ngày</label>
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-control" formControlName="fromDate">
+        </div>
+        <div class="text-left">
+          <label>Đến ngày</label>
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-control" formControlName="toDate">
+        </div>
+        <input type="submit" class="btn btn-secondary mr-2" value="Tạo">
+        <button type="button" class="btn btn-danger " routerLink="">Huỷ</button>
+      </form>
+    </div>
+  </div>
+</div>

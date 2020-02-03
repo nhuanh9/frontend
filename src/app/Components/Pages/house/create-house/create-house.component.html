@@ -2,12 +2,12 @@
   <div class="col-2"></div>
   <div class="card text-center register col-lg-8 " style="background: #ffffff !important;">
     <div class=" text-center mt-2">
-      <h2>Create new House</h2>
+      <h2>Tạo nhà mới</h2>
     </div>
     <div class="card-body">
       <form [formGroup]="createForm" (ngSubmit)="createHouse()" class="form-group">
         <div class="text-left">
-          <label>House's Name</label>
+          <label>Tên nhà</label>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="nameHouse" placeholder="Input your house name...">
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="text-left">
-          <label>House Category</label>
+          <label>Loại nhà</label>
         </div>
         <div class="form-group">
           <div class="value text-center">
@@ -28,20 +28,8 @@
             </select>
           </div>
         </div>
-<!--        <div class="text-left">-->
-<!--          <label>Room Category</label>-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--          <div class="value text-center">-->
-<!--            <select class="custom-select custom-select-sm"-->
-<!--                    formControlName="categoryRoom">-->
-<!--              <option *ngFor="let typeRoom of listCategoryRoom"-->
-<!--                      [value]="typeRoom.id">{{typeRoom.name}}</option>-->
-<!--            </select>-->
-<!--          </div>-->
-<!--        </div>-->
         <div class="text-left">
-          <label>Address</label>
+          <label>Địa chỉ</label>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="address"
@@ -52,7 +40,7 @@
           </div>
         </div>
         <div class="text-left">
-          <label>Amount Bathroom</label>
+          <label>Số lượng phòng tắm</label>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" formControlName="amountBathRoom"
@@ -63,7 +51,7 @@
           </div>
         </div>
         <div class="text-left">
-          <label>Amount Bedroom</label>
+          <label>Số lượng phòng ngủ</label>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" formControlName="amountBedRoom"
@@ -74,7 +62,7 @@
           </div>
         </div>
         <div class="text-left">
-          <label>Description</label>
+          <label>Mô tả</label>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="description"
@@ -85,15 +73,15 @@
           </div>
         </div>
         <div class="text-left">
-          <label>Image Link</label>
+          <label>Ảnh</label>
         </div>
         <div class="form-group">
 <!--          <input type="text" class="form-control" ngModel name="imgUrls"-->
 <!--                 placeholder="Image Link ....">-->
           <input type="file" class="form-control" (change)="saveImg($event)">
         </div>
-        <input type="submit" class="btn btn-secondary mr-2" value="Create">
-        <button type="button" class="btn btn-danger " routerLink="">Cancel</button>
+        <input type="submit" class="btn btn-secondary mr-2" value="Tạo">
+        <button type="button" class="btn btn-danger " routerLink="">Huỷ</button>
       </form>
     </div>
   </div>
