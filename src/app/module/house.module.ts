@@ -6,6 +6,7 @@ import {DetailHouseComponent} from '../Components/Pages/house/detail-house/detai
 import {CreateHouseComponent} from '../Components/Pages/house/create-house/create-house.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {EditHouseComponent} from '../Components/Pages/house/edit-house/edit-house.component';
+import {AddRoomComponent} from '../Components/Pages/room/add-room/add-room.component';
 
 const routing: Routes = [
   {
@@ -19,6 +20,11 @@ const routing: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: ':id/create-room',
+    component: AddRoomComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'edit-house/:id',
     component: EditHouseComponent,
     canActivate: [AuthGuard]
@@ -29,6 +35,7 @@ const routing: Routes = [
   declarations: [
     DetailHouseComponent,
     CreateHouseComponent,
+    AddRoomComponent,
     EditHouseComponent
   ],
   imports: [

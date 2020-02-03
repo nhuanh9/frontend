@@ -14,11 +14,6 @@ const routing: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'create-room',
-    component: AddRoomComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'edit-room/:id',
     component: EditRoomComponent,
     canActivate: [AuthGuard]
@@ -28,7 +23,6 @@ const routing: Routes = [
 @NgModule({
   declarations: [
     DetailRoomComponent,
-    AddRoomComponent,
     EditRoomComponent
   ],
   imports: [
