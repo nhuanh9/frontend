@@ -31,8 +31,7 @@ import { ListOrderComponent } from './Components/Pages/room/Order/list-order/lis
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent,
-    ListOrderComponent
+    ListRoomComponent
   ],
   imports: [
     BrowserModule,
