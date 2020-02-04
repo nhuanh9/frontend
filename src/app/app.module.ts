@@ -18,6 +18,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { LoginComponent } from './Components/Pages/users/login/login.component';
 import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
 import { UpdateUserProfileComponent } from './Components/Pages/users/update-user-profile/update-user-profile.component';
+import { ListOrderComponent } from './Components/Pages/room/Order/list-order/list-order.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UpdateUserProfileComponent } from './Components/Pages/users/update-user
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent
+    ListRoomComponent,
+    ListOrderComponent
   ],
   imports: [
     BrowserModule,

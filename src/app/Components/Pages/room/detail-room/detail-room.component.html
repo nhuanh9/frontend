@@ -1,14 +1,16 @@
-<div class="row m-5 detail">
+<div class="row ml-4 mt-5">
+  <div class="col-6"><h2>Home >> {{room.nameHouse}} >><u>{{room.nameRoom}}</u></h2></div>
+</div>
+<div class="row ml-5 mr-5 mb-5 detail">
   <div class="col-md-6 imageProduct">
-    <p><u>Home >> {{room.nameHouse}} >> {{room.nameRoom}}</u></p>
-    <img width="100%" src="{{room.imageUrls}}" class="imgProduct mb-3">
+    <img width="100%" src="{{room.imageUrls}}" class="imgProduct mb-3 mt-3">
 
   </div>
   <div class="col-md-6">
     <div class="order-in-detail">
       <div class="m-3">
         <b><h2>{{room.nameRoom}}</h2></b>
-        <p><b>100$</b>/đêm</p>
+        <p><b>{{room.priceRoom}}</b>/đêm</p>
       </div>
     </div>
     <div class="info-house mt-3">
@@ -25,3 +27,71 @@
     </a>
   </div>
 </div>
+<div class="row ml-4">
+  <div class="col-6">
+    <h2>Danh sách đơn đặt phòng</h2>
+    <div class="" *ngFor="let order of orders;">
+      <div class="row m-3 room">
+        <div class="ml-5">
+          <div class="row">
+            <div class="m-1">
+              <h1>{{order.nameGuest}}</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-1">
+              Số điện thoại {{order.phoneNumber}}
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-1">
+              Từ ngày: {{order.formDate.substring(0, 10)}}
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-1">
+              Đến : {{order.toDate.substring(0, 10)}}
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-1">
+              Tông tiền: {{order.total}}
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-1" *ngIf="order.statusOder === 'WaitAccept'">
+              Trạng thái: Chờ xác nhận
+            </div>
+          </div>
+          <div class="row">
+            <div class="m-2">
+              <a class="btn btn-success" style="width: 100px; color: white">Chấp nhận</a>
+              <a class="btn btn-danger ml-3" style="width: 100px; color: white;">Từ chối</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-6">
+    <h2>
+      Bình luận
+    </h2>
+    <div class="room">
+      <div *ngFor="let comment of comments;">
+        <div class="row m-3">
+          <p class="mt-3">Guest: {{comment.comment}}</p>
+          <hr>
+        </div>
+      </div>
+      <form [formGroup]="commentForm" (ngSubmit)="addComment()" class="form-group m-3">
+        <div class="form-group">
+          <input type="textarea" class="form-control" formControlName="comment" placeholder="Input your comment...">
+        </div>
+        <input type="submit" class="btn btn-secondary mb-2" value="Bình luận">
+      </form>
+    </div>
+  </div>
+</div>
+

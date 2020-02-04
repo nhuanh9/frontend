@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {House} from '../model/House';
 import {Room} from '../model/room';
 import {Order} from '../model/order';
+import {CommentToRoom} from '../model/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,9 @@ export class RoomService {
 
   createOrder(idRoom, order): Observable<Order> {
     return this.http.post<Order>(this.API_URL + `/${idRoom}/order`, order);
+  }
+
+  addComment(idRoom, comment): Observable<CommentToRoom> {
+    return this.http.post<CommentToRoom>(this.API_URL + `/${idRoom}/comments`, comment);
   }
 }

@@ -7,4 +7,5 @@ export interface Room {
   priceRoom?: string;
   imageUrls?: string;
   orderForms?: any;
+  listComment?: any;
 }

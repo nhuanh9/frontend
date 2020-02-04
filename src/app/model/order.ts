@@ -1,3 +1,5 @@
+import {CommentToRoom} from './comment';
+
 export interface Order {
   id?: string;
   nameGuest?: string;
