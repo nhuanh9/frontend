@@ -18,8 +18,8 @@ export class HouseService {
     return this.http.get<House[]>(this.API_URL);
   }
 
-  create(house): Observable<House> {
-    return this.http.post<House>(this.API_URL, house);
+  create(userId, house): Observable<House> {
+    return this.http.post<House>(this.API_URL + `/user/${userId}`, house);
   }
 
   detail(id: string): Observable<House> {

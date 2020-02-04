@@ -11,6 +11,7 @@ import {CategoryHouseService} from '../../../../Services/category-house.service'
 import {CategoryRoomService} from '../../../../Services/category-room.service';
 import {AuthenticationService} from '../../../../Services/authentication.service';
 import {UserService} from '../../../../Services/user.service';
+import {User} from '../../../../model/user';
 
 @Component({
   selector: 'app-create-house',
@@ -22,7 +23,7 @@ export class CreateHouseComponent implements OnInit {
   house: House;
   arrayPicture = '';
   createForm: FormGroup;
-
+  currentUser: User;
   listCategoryHouse: CategoryHouse[];
 
   constructor(private houseService: HouseService,
@@ -95,9 +96,10 @@ export class CreateHouseComponent implements OnInit {
       };
       this.userService.userDetail(value.id + '').subscribe(result => {
         this.house.hostName = result.username;
-        this.house.user = result;
+        // this.house.user = result;
+        this.currentUser = result;
         console.log(this.house);
-        this.houseService.create(this.house).subscribe(() => {
+        this.houseService.create(this.currentUser.id, this.house).subscribe(() => {
           alert('Thêm thành công!');
           this.router.navigate(['/']);
         }, error1 => {

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {House} from '../../../../model/House';
 import {HouseService} from '../../../../Services/house.service';
+import {AuthenticationService} from '../../../../Services/authentication.service';
+import {User} from '../../../../model/user';
+import {UserService} from '../../../../Services/user.service';
 
 @Component({
   selector: 'app-list-house',
@@ -12,7 +15,11 @@ export class ListHouseComponent implements OnInit {
 
   listHouse: House[];
   nameHouse: string[];
-  constructor(private houseService: HouseService) {
+  currentUser: User;
+
+  constructor(private houseService: HouseService,
+              private authenticationService: AuthenticationService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
@@ -21,6 +28,13 @@ export class ListHouseComponent implements OnInit {
     }, error => {
       console.log('Loi!');
     });
+
+    this.authenticationService.currentUser.subscribe(value => {
+      this.userService.userDetail(value.id + '').subscribe(result => {
+        this.currentUser = result;
+      });
+    });
+
   }
 
 }
