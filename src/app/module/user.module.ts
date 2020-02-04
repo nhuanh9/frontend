@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from '../helper/auth-guard';
 import {ReactiveFormsModule} from '@angular/forms';
 import {UpdateUserProfileComponent} from '../Components/Pages/users/update-user-profile/update-user-profile.component';
+import {ListYourHouseComponent} from '../Components/Pages/users/list-your-house/list-your-house.component';
 
 const routes: Routes = [
   {
@@ -20,12 +21,17 @@ const routes: Routes = [
   {
     path: 'update-profile/:id',
     component: UpdateUserProfileComponent
+  },
+  {
+    path: 'list-your-house/:id',
+    component: ListYourHouseComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    UpdateUserProfileComponent
+    UpdateUserProfileComponent,
+    ListYourHouseComponent
   ],
   imports: [
     CommonModule,

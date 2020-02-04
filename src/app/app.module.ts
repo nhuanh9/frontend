@@ -19,6 +19,7 @@ import { LoginComponent } from './Components/Pages/users/login/login.component';
 import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
 import { UpdateUserProfileComponent } from './Components/Pages/users/update-user-profile/update-user-profile.component';
 import { ListOrderComponent } from './Components/Pages/room/Order/list-order/list-order.component';
+import { ListYourHouseComponent } from './Components/Pages/users/list-your-house/list-your-house.component';
 
 @NgModule({
   declarations: [

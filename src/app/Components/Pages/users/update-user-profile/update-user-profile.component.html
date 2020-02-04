@@ -1,9 +1,9 @@
 <!--<app-carousel></app-carousel>-->
-<div class="row container-fluid mt-3 ml-1" >
+<div class="row container-fluid mt-3 ml-1">
   <div class="col-2 test"></div>
   <div class="card text-center register col-lg-8 " style="background: white !important;">
     <div class=" text-center mt-2">
-      <h2>Update Info</h2>
+      <h2>Thông tin cá nhân</h2>
     </div>
     <div class="card-body">
       <!-- Login-->
@@ -22,19 +22,30 @@
           <input type="text" class="form-control" formControlName="lastName" id="exampleInputLastName"
                  placeholder="Last Name" value="{{userLastName}}">
         </div>
+        <div class="text-left">
+          <label>Email</label>
+        </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="email" id="exampleInputEmail"
                  placeholder="email" value="{{userEmail}}">
+        </div>
+        <div class="text-left">
+          <label>Phone Number</label>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="phoneNumber" id="exampleInputPhoneNumber"
                  placeholder="Phone Number" value="{{userPhoneNumber}}">
         </div>
+        <div class="text-left">
+          <label>Gender</label>
+        </div>
         <div class="form-group">
           <input type="text" class="form-control" formControlName="gender" id="exampleInputGender"
                  placeholder="Gender" value="{{userGender}}">
         </div>
+        <button class="btn btn-primary nutPhai mr-2" [routerLink]="['/user/list-your-house',currentUser.id]">List Your House</button>
         <button type="submit" class="btn btn-success nutPhai mr-2">Update</button>
+        <button class="btn btn-info nutPhai mr-2">Your Orders</button>
       </form>
     </div>
   </div>

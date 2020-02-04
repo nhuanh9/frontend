@@ -13,4 +13,5 @@ export interface User {
   phoneNumber?: string;
   enabled?: boolean;
   roles?: [Role];
+  houseList?: any;
 }
