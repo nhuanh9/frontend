@@ -8,11 +8,7 @@
       </a>
       <div style="z-index: 2; position: inherit;">
         <div class="productName">
-          <a [routerLink]="['/user/house/detail-house', house.id]" style="color: #000000;">{{house.nameHouse.split(' ')[0]}}</a>
-        </div>
-        <div class="price">
-<!--          {{house.price}}$-->
-          100$
+          <a [routerLink]="['/user/house/detail-house', house.id]" style="color: #000000;"><h4>{{house.nameHouse.split(' ')[0]}}</h4></a>
         </div>
         <div class="order">
           <a [routerLink]="['/user/house/detail-house', house.id]" class="btn btn-secondary" style="width: 100px;">Xem CT</a>
