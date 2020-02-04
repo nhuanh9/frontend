@@ -55,7 +55,7 @@ export class CreateOrderComponent implements OnInit {
     this.createForm = this.fb.group({
       nameGuest: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
-      fromDate: ['', [Validators.required]],
+      formDate: ['', [Validators.required]],
       toDate: ['', [Validators.required]]
     });
   }
@@ -66,13 +66,13 @@ export class CreateOrderComponent implements OnInit {
       this.order = {
         nameGuest: this.createForm.get('nameGuest').value,
         phoneNumber: this.createForm.get('phoneNumber').value,
-        fromDate: this.createForm.get('fromDate').value,
+        formDate: this.createForm.get('formDate').value,
         toDate: this.createForm.get('toDate').value,
         timeOrder: '',
         total: '',
       };
+      console.log(this.order);
       this.userService.userDetail(value.id + '').subscribe(result => {
-        this.order.user = result.id;
         this.roomService.createOrder(this.room.id, this.order).subscribe(() => {
           alert('Thêm room thành công!');
           this.router.navigate(['/']);
@@ -81,7 +81,6 @@ export class CreateOrderComponent implements OnInit {
         });
       });
     });
-    console.log(this.order);
   }
 
 }

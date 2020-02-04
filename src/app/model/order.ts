@@ -3,8 +3,8 @@ export interface Order {
   nameGuest?: string;
   phoneNumber?: string;
   timeOrder?: string;
-  fromDate?: string;
+  formDate?: string;
   toDate?: string;
   total?: string;
-  user?: any;
+  statusOder?: string;
 }
