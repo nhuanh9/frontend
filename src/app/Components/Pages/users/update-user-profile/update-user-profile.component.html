@@ -7,6 +7,7 @@
     </div>
     <div class="card-body">
       <!-- Login-->
+      <img src="{{currentUser.imageUrls}}" alt="Image user" width="30%" style="border-radius: 50%">
       <form [formGroup]="userForm" (ngSubmit)="updateUserProfile()">
         <div class="text-left">
           <label>First Name</label>
@@ -42,6 +43,12 @@
         <div class="form-group">
           <input type="text" class="form-control" formControlName="gender" id="exampleInputGender"
                  placeholder="Gender" value="{{userGender}}">
+        </div>
+        <div class="text-left">
+          <label>Image Link</label>
+        </div>
+        <div class="form-group">
+          <input type="file" class="form-control" (change)="saveImg($event)">
         </div>
         <button class="btn btn-primary nutPhai mr-2" [routerLink]="['/user/list-your-house',currentUser.id]">List Your House</button>
         <button type="submit" class="btn btn-success nutPhai mr-2">Update</button>

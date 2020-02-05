@@ -5,6 +5,8 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {User} from '../../../../model/user';
 import {Subscription} from 'rxjs';
 import {error} from 'util';
+import * as firebase from 'firebase';
+import {AngularFireDatabase} from '@angular/fire/database';
 
 @Component({
   selector: 'app-update-user-profile',
@@ -18,13 +20,16 @@ export class UpdateUserProfileComponent implements OnInit {
   userLastName = '';
   userGender = '';
   userPhoneNumber = '';
-  userEmail = '';
+  userEmail = '1';
+  arrayPicture = '';
 
   constructor(private userService: UserService,
               private router: Router,
               private fb: FormBuilder,
+              private db: AngularFireDatabase,
               private activatedRoute: ActivatedRoute) {
   }
+
   userForm: FormGroup = this.fb.group({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
@@ -32,6 +37,7 @@ export class UpdateUserProfileComponent implements OnInit {
     email: new FormControl('', [Validators.required]),
     phoneNumber: new FormControl('', Validators.required),
   });
+
   ngOnInit() {
     this.getUserProfile();
   }
@@ -46,9 +52,11 @@ export class UpdateUserProfileComponent implements OnInit {
         this.userGender = this.currentUser.gender;
         this.userPhoneNumber = this.currentUser.phoneNumber;
         this.userEmail = this.currentUser.email;
+        this.arrayPicture = this.currentUser.imageUrls;
+        console.log(this.arrayPicture);
         console.log('Thanh cong!');
       }, () => {
-        console.log('Loi');
+        console.log('Loi' + this.arrayPicture);
       });
     });
   }
@@ -64,7 +72,8 @@ export class UpdateUserProfileComponent implements OnInit {
           lastName: this.userForm.get('lastName').value,
           gender: this.userForm.get('gender').value,
           phoneNumber: this.userForm.get('phoneNumber').value,
-          email: this.userForm.get('email').value
+          email: this.userForm.get('email').value,
+          imageUrls: this.arrayPicture
         };
         if (user.firstName === '') {
           user.firstName = this.userFirstName;
@@ -84,10 +93,33 @@ export class UpdateUserProfileComponent implements OnInit {
         this.userService.updateUserProfile(this.currentUser.id, user).subscribe(() => {
           alert('Cap nhat thanh cong');
           this.router.navigate(['/']);
-        }, ()  => {
+        }, () => {
           console.log('Loi');
         });
       });
     });
+  }
+
+  saveImg(value) {
+    const file = value.target.files;
+    const metadata = {
+      contentType: 'image/jpeg',
+    };
+    const uploadTask = firebase.storage().ref('img/' + Date.now()).put(file[0], metadata);
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        // in progress
+        const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+      },
+      () => {
+        console.log('Error');
+      },
+      () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+          this.arrayPicture = downloadURL;
+          console.log(this.arrayPicture);
+        });
+      }
+    );
   }
 }

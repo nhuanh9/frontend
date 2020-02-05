@@ -14,4 +14,6 @@ export interface User {
   enabled?: boolean;
   roles?: [Role];
   houseList?: any;
+  imageUrls?: string;
+  listOrder?: any;
 }
