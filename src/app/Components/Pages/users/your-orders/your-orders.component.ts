@@ -42,9 +42,12 @@ export class YourOrdersComponent implements OnInit {
   }
 
   deleteOrder(order) {
-    const orderTime = new Date(order.formDate) - this.currentTime;
-    console.log(orderTime - this.oneDay);
-    if (orderTime > this.oneDay || orderTime < 0) {
+    const orderTime = new Date(order.formDate);
+    const orderTimeSecond = orderTime.getTime() - this.currentTime.getTime();
+    // console.log(orderTime.getTime());
+    // console.log(this.currentTime.getTime());
+    console.log(orderTimeSecond - this.oneDay);
+    if (orderTimeSecond > this.oneDay || orderTimeSecond < 0) {
       this.authenticationService.currentUser.subscribe(value => {
         const id = order.id;
         this.orderService.delete(id).subscribe(() => {
