@@ -57,8 +57,9 @@ export class DetailRoomComponent implements OnInit {
       this.userService.userDetail(value.id + '').subscribe(result => {
         this.comment.username = result.username;
         this.roomService.addComment(this.room.id, this.comment).subscribe(() => {
-          alert('Thêm bình luận thành công!');
-          this.router.navigate(['/user/room/detail-room/' + this.room.id]);
+          // alert('Thêm bình luận thành công!');
+          location.reload(true);
+          // this.router.navigate(['/user/room/detail-room/' + this.room.id]);
         }, error1 => {
           console.log('Lỗi ' + error1);
         });

@@ -78,7 +78,9 @@ export class UpdateUserProfileComponent implements OnInit {
           gender: this.userForm.get('gender').value,
           phoneNumber: this.userForm.get('phoneNumber').value,
           email: this.userForm.get('email').value,
-          imageUrls: this.arrayPicture
+          imageUrls: this.arrayPicture,
+          houseList: this.userHouses,
+          listOrder: this.userOrders
         };
         if (user.firstName === '') {
           user.firstName = this.userFirstName;
