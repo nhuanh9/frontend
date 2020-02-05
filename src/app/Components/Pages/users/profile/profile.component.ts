@@ -1,21 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../../../../Services/user.service';
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import {User} from '../../../../model/user';
 import {Subscription} from 'rxjs';
-import {error} from 'util';
-import * as firebase from 'firebase';
-import {AngularFireDatabase} from '@angular/fire/database';
 import {Order} from '../../../../model/order';
 import {House} from '../../../../model/House';
+import {UserService} from '../../../../Services/user.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AngularFireDatabase} from '@angular/fire/database';
+import * as firebase from 'firebase';
 
 @Component({
-  selector: 'app-update-user-profile',
-  templateUrl: './update-user-profile.component.html',
-  styleUrls: ['./update-user-profile.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class UpdateUserProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   currentUser: User;
   sub: Subscription;
   userFirstName = '';
@@ -26,7 +25,6 @@ export class UpdateUserProfileComponent implements OnInit {
   arrayPicture = '';
   userOrders: Order[];
   userHouses: House[];
-
   constructor(private userService: UserService,
               private router: Router,
               private fb: FormBuilder,
@@ -100,7 +98,7 @@ export class UpdateUserProfileComponent implements OnInit {
         }
         this.userService.updateUserProfile(this.currentUser.id, user).subscribe(() => {
           alert('Cap nhat thanh cong');
-          this.router.navigate(['/user/profile/' + this.currentUser.id]);
+          this.router.navigate(['/']);
           console.log(this.currentUser);
         }, () => {
           console.log('Loi');

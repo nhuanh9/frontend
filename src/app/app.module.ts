@@ -21,6 +21,7 @@ import { UpdateUserProfileComponent } from './Components/Pages/users/update-user
 import { ListOrderComponent } from './Components/Pages/room/Order/list-order/list-order.component';
 import { ListYourHouseComponent } from './Components/Pages/users/list-your-house/list-your-house.component';
 import { YourOrdersComponent } from './Components/Pages/users/your-orders/your-orders.component';
+import { ProfileComponent } from './Components/Pages/users/profile/profile.component';
 
 @NgModule({
   declarations: [

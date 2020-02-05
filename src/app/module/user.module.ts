@@ -8,6 +8,7 @@ import {UpdateUserProfileComponent} from '../Components/Pages/users/update-user-
 import {ListYourHouseComponent} from '../Components/Pages/users/list-your-house/list-your-house.component';
 import {ListOrderComponent} from '../Components/Pages/room/Order/list-order/list-order.component';
 import {YourOrdersComponent} from '../Components/Pages/users/your-orders/your-orders.component';
+import {ProfileComponent} from '../Components/Pages/users/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
     component: UpdateUserProfileComponent
   },
   {
+    path: 'profile/:id',
+    component: ProfileComponent
+  },
+  {
     path: 'list-your-house/:id',
     component: ListYourHouseComponent
   },
@@ -38,7 +43,8 @@ const routes: Routes = [
   declarations: [
     UpdateUserProfileComponent,
     ListYourHouseComponent,
-    YourOrdersComponent
+    YourOrdersComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

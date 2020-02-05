@@ -18,12 +18,13 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" *ngIf="!currentUser">
-      <button type="button" class="btn btn-outline-light mr-sm-2 " routerLink="login">Login</button>
-      <button type="button" class="btn btn-outline-light" routerLink="register">Register</button>
+      <button type="button" class="btn btn-outline-light mr-sm-2 " routerLink="login">Đăng nhập</button>
+      <button type="button" class="btn btn-outline-light" routerLink="register">Đăng ký</button>
     </form>
     <div *ngIf="currentUser">
-      <a (click)="logout()" class="btn btn-outline-light">Log Out</a>
-      <a [routerLink]="['/user/update-profile',currentUser.id]" class="btn btn-outline-light ml-2">
+      <a (click)="logout()" class="btn btn-outline-light">Đăng suất</a>
+
+      <a [routerLink]="['/user/profile',currentUser.id]" class="btn btn-outline-light ml-2">
         TTCN
       </a>
     </div>

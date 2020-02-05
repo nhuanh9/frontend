@@ -3,11 +3,11 @@
   <div class="col-2 test"></div>
   <div class="card text-center register col-lg-8 " style="background: white !important;">
     <div class=" text-center mt-2">
-      <h2>Thông tin cá nhân</h2>
+      <h2>Sửa thông tin cá nhân</h2>
     </div>
     <div class="card-body">
       <!-- Login-->
-      <img src="{{currentUser.imageUrls}}" alt="Image user" width="30%" style="border-radius: 5%">
+      <img src="{{currentUser.imageUrls}}" alt="Image user" width="30%" style="border-radius: 15px">
       <form [formGroup]="userForm" (ngSubmit)="updateUserProfile()">
         <div class="text-left">
           <label>First Name</label>
@@ -50,9 +50,8 @@
         <div class="form-group">
           <input type="file" class="form-control" (change)="saveImg($event)">
         </div>
-        <button class="btn btn-primary nutPhai mr-2" [routerLink]="['/user/list-your-house',currentUser.id]">List Your House</button>
-        <button type="submit" class="btn btn-success nutPhai mr-2">Update</button>
-        <button class="btn btn-info nutPhai mr-2" [routerLink]="['/user/list-orders',currentUser.id]">Your Orders</button>
+
+        <button type="submit" class="btn btn-success nutPhai mr-2">Cập nhật</button>
       </form>
     </div>
   </div>
