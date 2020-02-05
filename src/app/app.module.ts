@@ -20,6 +20,7 @@ import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.c
 import { UpdateUserProfileComponent } from './Components/Pages/users/update-user-profile/update-user-profile.component';
 import { ListOrderComponent } from './Components/Pages/room/Order/list-order/list-order.component';
 import { ListYourHouseComponent } from './Components/Pages/users/list-your-house/list-your-house.component';
+import { YourOrdersComponent } from './Components/Pages/users/your-orders/your-orders.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { ListYourHouseComponent } from './Components/Pages/users/list-your-house
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent
+    ListRoomComponent,
   ],
   imports: [
     BrowserModule,

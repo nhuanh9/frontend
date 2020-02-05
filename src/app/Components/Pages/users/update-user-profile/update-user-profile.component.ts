@@ -7,6 +7,8 @@ import {Subscription} from 'rxjs';
 import {error} from 'util';
 import * as firebase from 'firebase';
 import {AngularFireDatabase} from '@angular/fire/database';
+import {Order} from '../../../../model/order';
+import {House} from '../../../../model/House';
 
 @Component({
   selector: 'app-update-user-profile',
@@ -22,7 +24,8 @@ export class UpdateUserProfileComponent implements OnInit {
   userPhoneNumber = '';
   userEmail = '1';
   arrayPicture = '';
-
+  userOrders: Order[];
+  userHouses: House[];
   constructor(private userService: UserService,
               private router: Router,
               private fb: FormBuilder,
@@ -53,6 +56,8 @@ export class UpdateUserProfileComponent implements OnInit {
         this.userPhoneNumber = this.currentUser.phoneNumber;
         this.userEmail = this.currentUser.email;
         this.arrayPicture = this.currentUser.imageUrls;
+        this.userOrders = this.currentUser.listOrder;
+        this.userHouses = this.currentUser.houseList;
         console.log(this.arrayPicture);
         console.log('Thanh cong!');
       }, () => {
@@ -93,6 +98,7 @@ export class UpdateUserProfileComponent implements OnInit {
         this.userService.updateUserProfile(this.currentUser.id, user).subscribe(() => {
           alert('Cap nhat thanh cong');
           this.router.navigate(['/']);
+          console.log(this.currentUser);
         }, () => {
           console.log('Loi');
         });
