@@ -22,7 +22,6 @@ export class DetailRoomComponent implements OnInit {
   comments: CommentToRoom[];
   commentForm: FormGroup;
   comment: CommentToRoom;
-
   constructor(private roomService: RoomService,
               private  router: Router,
               private fb: FormBuilder,

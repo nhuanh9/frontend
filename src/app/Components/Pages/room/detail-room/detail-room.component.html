@@ -10,13 +10,13 @@
     <div class="order-in-detail">
       <div class="m-3">
         <b><h2>{{room.nameRoom}}</h2></b>
-        <p><b>{{room.priceRoom}}</b>/đêm</p>
+        <p><b>{{room.priceRoom}}$</b>/đêm</p>
       </div>
     </div>
     <div class="info-house mt-3">
       <div class="m-3">
         <p>Chủ nhà: {{room.nameHost}}</p>
-        <p>Mô tả: Đẹp {{room.description}} </p>
+        <p>Mô tả: {{room.description}} </p>
       </div>
     </div>
     <a class="btn btn-danger" [routerLink]="['/user/room/edit-room', room.id]">
@@ -38,7 +38,7 @@
     <div class="room m-3">
       <div *ngFor="let comment of comments;">
         <div class="row m-3">
-          <p class="mt-3"><b>{{comment.username}}</b>: <i>{{comment.comment}}</i></p>
+          <img><p class="mt-3"><b>{{comment.username}}</b>: <i>{{comment.comment}}</i></p>
           <hr>
         </div>
       </div>
