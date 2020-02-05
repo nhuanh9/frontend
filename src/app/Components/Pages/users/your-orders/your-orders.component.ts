@@ -20,6 +20,8 @@ export class YourOrdersComponent implements OnInit {
   orders: Order[];
   sub: Subscription;
   currentUser: User;
+  oneDay = 86400000;
+  currentTime = new Date();
 
   constructor(private houseService: HouseService,
               private  router: Router,
@@ -40,16 +42,22 @@ export class YourOrdersComponent implements OnInit {
   }
 
   deleteOrder(order) {
-    this.authenticationService.currentUser.subscribe(value => {
-      const id = order.id;
-      this.orderService.delete(id).subscribe(() => {
-        alert('Thanh Cong!');
-        location.reload();
-      }, error => {
-        alert('Thanh Cong!');
-        console.log('Loi! ' + error);
-        location.reload();
+    const orderTime = new Date(order.formDate) - this.currentTime;
+    console.log(orderTime - this.oneDay);
+    if (orderTime > this.oneDay || orderTime < 0) {
+      this.authenticationService.currentUser.subscribe(value => {
+        const id = order.id;
+        this.orderService.delete(id).subscribe(() => {
+          alert('Thành Công!');
+          location.reload();
+        }, error => {
+          console.log('Loi! ' + error.toString());
+          alert('Thành Công!');
+          location.reload();
+        });
       });
-    });
+    } else  {
+      alert('Bạn không thể xoá đơn này do còn ít hơn 1 ngày!');
+    }
   }
 }
