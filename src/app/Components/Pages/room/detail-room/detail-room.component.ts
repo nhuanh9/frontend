@@ -55,6 +55,7 @@ export class DetailRoomComponent implements OnInit {
       console.log(this.comment);
       this.userService.userDetail(value.id + '').subscribe(result => {
         this.comment.username = result.username;
+        this.comment.imageUrls = result.imageUrls;
         this.roomService.addComment(this.room.id, this.comment).subscribe(() => {
           // alert('Thêm bình luận thành công!');
           location.reload(true);
