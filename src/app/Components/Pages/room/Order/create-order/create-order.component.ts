@@ -73,10 +73,9 @@ export class CreateOrderComponent implements OnInit {
       };
       console.log(this.order);
       this.userService.userDetail(value.id + '').subscribe(result => {
-        this.order.user = result;
-        this.roomService.createOrder(this.room.id, this.order).subscribe(() => {
-          alert('Thêm phòng thành công!');
-          this.router.navigate(['/']);
+        this.roomService.createOrder(this.room.id, result.id, this.order).subscribe(() => {
+          alert('Thêm order thành công!');
+          this.router.navigate(['/user/room/detail-room/' + this.room.id + '']);
           console.log(this.order);
         }, error1 => {
           console.log('Lỗi ' + error1);

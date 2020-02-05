@@ -9,5 +9,4 @@ export interface Order {
   toDate?: string;
   total?: string;
   statusOder?: string;
-  user?: any;
 }

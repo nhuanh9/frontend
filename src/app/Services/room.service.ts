@@ -32,8 +32,8 @@ export class RoomService {
     return this.http.delete<Room>(this.API_URL + `/${id}`);
   }
 
-  createOrder(idRoom, order): Observable<Order> {
-    return this.http.post<Order>(this.API_URL + `/${idRoom}/order`, order);
+  createOrder(idRoom, idUser, order): Observable<Order> {
+    return this.http.post<Order>(this.API_URL + `/${idRoom}/user/${idUser}/order`, order);
   }
 
   addComment(idRoom, comment): Observable<CommentToRoom> {

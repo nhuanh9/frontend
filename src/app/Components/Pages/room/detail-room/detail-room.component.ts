@@ -22,6 +22,7 @@ export class DetailRoomComponent implements OnInit {
   comments: CommentToRoom[];
   commentForm: FormGroup;
   comment: CommentToRoom;
+
   constructor(private roomService: RoomService,
               private  router: Router,
               private fb: FormBuilder,
@@ -57,7 +58,7 @@ export class DetailRoomComponent implements OnInit {
         this.comment.username = result.username;
         this.roomService.addComment(this.room.id, this.comment).subscribe(() => {
           alert('Thêm bình luận thành công!');
-          this.router.navigate(['/']);
+          this.router.navigate(['/user/room/detail-room/' + this.room.id]);
         }, error1 => {
           console.log('Lỗi ' + error1);
         });
