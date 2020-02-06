@@ -11,11 +11,20 @@
         <a class="nav-link" routerLink=""> Trang chủ <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/user/house/create-house">Tạo mới </a>
+        <a class="nav-link">Khu vực</a>
       </li>
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" routerLink="search-house">Tìm kiếm </a>-->
-<!--      </li>-->
+      <li class="nav-item">
+        <a class="nav-link">Loại nhà</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Giá chỗ ở</a>
+      </li>
+      <li class="nav-item">
+        <form class="form-inline mt-1">
+          <input type="text" class="form-control " style="color: black !important;">
+          <input type="submit" class="btn btn-outline-light " value="Search">
+        </form>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" *ngIf="!currentUser">
       <button type="button" class="btn btn-outline-light mr-sm-2 " routerLink="login">Đăng nhập</button>
