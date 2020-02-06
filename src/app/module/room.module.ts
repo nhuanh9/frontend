@@ -19,7 +19,7 @@ const routing: Routes = [
   },
   {
     path: 'detail-your-room/:id',
-    component: DetailRoomComponent,
+    component: DetailYourRoomsComponent,
     canActivate: [AuthGuard]
   },
   {
