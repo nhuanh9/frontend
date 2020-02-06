@@ -20,12 +20,13 @@
         <a class="nav-link">Giá chỗ ở</a>
       </li>
       <li class="nav-item">
-        <form class="form-inline mt-1">
-          <input type="text" class="form-control " style="color: black !important;">
-          <button type="submit" class="btn btn-outline-light "><i class="fas fa-search"></i></button>
-        </form>
+
       </li>
     </ul>
+    <form class="form-inline mr-2">
+      <input type="text" class="form-control " style="color: black !important;">
+      <button type="submit" class="btn btn-outline-light "><i class="fas fa-search"></i></button>
+    </form>
     <form class="form-inline my-2 my-lg-0" *ngIf="!currentUser">
       <button type="button" class="btn btn-outline-light mr-sm-2 " routerLink="login">Đăng nhập</button>
       <button type="button" class="btn btn-outline-light" routerLink="register">Đăng ký</button>
