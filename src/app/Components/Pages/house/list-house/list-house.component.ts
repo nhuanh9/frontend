@@ -12,7 +12,7 @@ import {UserService} from '../../../../Services/user.service';
 })
 export class ListHouseComponent implements OnInit {
   // listHouse: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+  p = 1;
   listHouse: House[];
   nameHouse: string[];
   currentUser: User;

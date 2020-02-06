@@ -25,6 +25,7 @@ import { ProfileComponent } from './Components/Pages/users/profile/profile.compo
 import { ListYourRoomsComponent } from './Components/Pages/users/list-your-rooms/list-your-rooms.component';
 import { DetailYourHouseComponent } from './Components/Pages/users/detail-your-house/detail-your-house.component';
 import { DetailYourRoomsComponent } from './Components/Pages/users/detail-your-rooms/detail-your-rooms.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DetailYourRoomsComponent } from './Components/Pages/users/detail-your-r
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
