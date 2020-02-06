@@ -15,7 +15,7 @@ import {UserService} from '../../../../Services/user.service';
   styleUrls: ['./detail-room.component.scss']
 })
 export class DetailRoomComponent implements OnInit {
-
+  p = 1;
   room: Room;
   sub: Subscription;
   orders: Order[];

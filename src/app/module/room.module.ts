@@ -10,6 +10,7 @@ import {CreateOrderComponent} from '../Components/Pages/room/Order/create-order/
 import {ListOrderComponent} from '../Components/Pages/room/Order/list-order/list-order.component';
 import {ListYourRoomsComponent} from '../Components/Pages/users/list-your-rooms/list-your-rooms.component';
 import {DetailYourRoomsComponent} from '../Components/Pages/users/detail-your-rooms/detail-your-rooms.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const routing: Routes = [
   {
@@ -50,7 +51,8 @@ const routing: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routing),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class RoomModule {
