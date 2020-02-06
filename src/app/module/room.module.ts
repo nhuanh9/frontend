@@ -8,10 +8,17 @@ import {AddRoomComponent} from '../Components/Pages/room/add-room/add-room.compo
 import {EditRoomComponent} from '../Components/Pages/room/edit-room/edit-room.component';
 import {CreateOrderComponent} from '../Components/Pages/room/Order/create-order/create-order.component';
 import {ListOrderComponent} from '../Components/Pages/room/Order/list-order/list-order.component';
+import {ListYourRoomsComponent} from '../Components/Pages/users/list-your-rooms/list-your-rooms.component';
+import {DetailYourRoomsComponent} from '../Components/Pages/users/detail-your-rooms/detail-your-rooms.component';
 
 const routing: Routes = [
   {
     path: 'detail-room/:id',
+    component: DetailRoomComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'detail-your-room/:id',
     component: DetailRoomComponent,
     canActivate: [AuthGuard]
   },
@@ -37,7 +44,8 @@ const routing: Routes = [
     DetailRoomComponent,
     EditRoomComponent,
     CreateOrderComponent,
-    ListOrderComponent
+    ListOrderComponent,
+    DetailYourRoomsComponent
   ],
   imports: [
     CommonModule,

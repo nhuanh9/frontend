@@ -85,7 +85,7 @@ export class EditRoomComponent implements OnInit {
         };
         this.roomService.edit(room, this.idRoom).subscribe(() => {
           alert('Sửa thành công!');
-          this.router.navigate(['/user/room/detail-room/' + this.room.id]);
+          this.router.navigate(['/user/room/detail-your-room/' + this.room.id]);
         }, error1 => {
           console.log('Lỗi ' + error1);
         });

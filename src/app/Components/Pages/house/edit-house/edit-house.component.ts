@@ -111,7 +111,7 @@ export class EditHouseComponent implements OnInit {
         };
         this.houseService.edit(house, this.idHouse).subscribe(() => {
           alert('Sửa thành công!');
-          this.router.navigate(['/']);
+          this.router.navigate(['/user/house/detail-your-house/' + this.house.id]);
         }, error1 => {
           console.log('Lỗi ' + error1);
         });

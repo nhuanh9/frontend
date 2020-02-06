@@ -22,6 +22,9 @@ import { ListOrderComponent } from './Components/Pages/room/Order/list-order/lis
 import { ListYourHouseComponent } from './Components/Pages/users/list-your-house/list-your-house.component';
 import { YourOrdersComponent } from './Components/Pages/users/your-orders/your-orders.component';
 import { ProfileComponent } from './Components/Pages/users/profile/profile.component';
+import { ListYourRoomsComponent } from './Components/Pages/users/list-your-rooms/list-your-rooms.component';
+import { DetailYourHouseComponent } from './Components/Pages/users/detail-your-house/detail-your-house.component';
+import { DetailYourRoomsComponent } from './Components/Pages/users/detail-your-rooms/detail-your-rooms.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,7 @@ import { ProfileComponent } from './Components/Pages/users/profile/profile.compo
     CarouselComponent,
     FooterComponent,
     LoginComponent,
-    ListRoomComponent,
+    ListRoomComponent
   ],
   imports: [
     BrowserModule,
