@@ -23,8 +23,8 @@
 
       </li>
     </ul>
-    <form class="form-inline mr-2">
-      <input type="text" class="form-control " style="color: black !important;">
+    <form class="form-inline mr-2" formGroup="search" (ngSubmit)="search()">
+      <input type="text" class="form-control " formControlName="addressSearch" style="color: black !important;">
       <button type="submit" class="btn btn-outline-light "><i class="fas fa-search"></i></button>
     </form>
     <form class="form-inline my-2 my-lg-0" *ngIf="!currentUser">
