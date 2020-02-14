@@ -9,16 +9,15 @@ import {EditRoomComponent} from '../Components/Pages/room/edit-room/edit-room.co
 import {CreateOrderComponent} from '../Components/Pages/room/Order/create-order/create-order.component';
 
 const routing: Routes = [
-  {
-    path: 'edit-room/:id',
-    component: EditRoomComponent,
-    canActivate: [AuthGuard]
-  }
+  // {
+  //   path: 'edit-room/:id',
+  //   component: EditRoomComponent,
+  //   canActivate: [AuthGuard]
+  // }
 ];
 
 @NgModule({
   declarations: [
-    EditRoomComponent
   ],
   imports: [
     CommonModule,

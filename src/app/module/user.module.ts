@@ -6,10 +6,9 @@ import {AuthGuard} from '../helper/auth-guard';
 import {ReactiveFormsModule} from '@angular/forms';
 import {UpdateUserProfileComponent} from '../Components/Pages/users/update-user-profile/update-user-profile.component';
 import {ListYourHouseComponent} from '../Components/Pages/users/list-your-house/list-your-house.component';
-import {ListOrderComponent} from '../Components/Pages/room/Order/list-order/list-order.component';
 import {YourOrdersComponent} from '../Components/Pages/users/your-orders/your-orders.component';
 import {ProfileComponent} from '../Components/Pages/users/profile/profile.component';
-
+import {ListYourRoomsComponent} from '../Components/Pages/users/list-your-rooms/list-your-rooms.component';
 const routes: Routes = [
   {
     path: 'house',
@@ -44,7 +43,8 @@ const routes: Routes = [
     UpdateUserProfileComponent,
     ListYourHouseComponent,
     YourOrdersComponent,
-    ProfileComponent
+    ProfileComponent,
+    ListYourRoomsComponent
   ],
   imports: [
     CommonModule,
