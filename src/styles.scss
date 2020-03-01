@@ -13,7 +13,13 @@
   font-family: "Times New Roman";
 }
 body{
-  background: #e5f3ff !important;
+  background: #DECDBB !important;
+}
+
+.btn {
+  -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -28,7 +34,7 @@ body{
     display: none !important;
   }
   .navbar {
-    background: black !important;
+    background: #2E2327 !important;
   }
   .slide {
     margin-top: 55px !important;

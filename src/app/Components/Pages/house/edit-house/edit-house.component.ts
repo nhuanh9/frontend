@@ -1,18 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {House} from '../../../../model/House';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CategoryHouse} from '../../../../model/categoryHouse';
+import {Category} from '../../../../model/category';
 import {HouseService} from '../../../../Services/house.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/database';
-import {CategoryHouseService} from '../../../../Services/category-house.service';
-import {AuthenticationService} from '../../../../Services/authentication.service';
-import {UserService} from '../../../../Services/user.service';
+import {CategoryService} from '../../../../Services/category.service';
 import * as firebase from 'firebase';
-import {RoomService} from '../../../../Services/room.service';
 import {Subscription} from 'rxjs';
-import {Room} from '../../../../model/room';
-import {User} from '../../../../model/user';
+
 
 @Component({
   selector: 'app-edit-house',
@@ -26,23 +22,20 @@ export class EditHouseComponent implements OnInit {
   arrayPicture = '';
   editForm: FormGroup;
   sub: Subscription;
-  rooms: Room[];
   idHouse: any;
-  listCategoryHouse: CategoryHouse[];
+  listCategory: Category[];
+  category: Category;
 
   constructor(private houseService: HouseService,
               private  router: Router,
               private db: AngularFireDatabase,
               private fb: FormBuilder,
-              private categoryHouse: CategoryHouseService,
-              private authenticationService: AuthenticationService,
-              private userService: UserService,
+              private categoryService: CategoryService,
               private activateRoute: ActivatedRoute,
-              private  roomService: RoomService
   ) {
   }
 
-  ngOnInit() {
+  getHouse() {
     this.sub = this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       const id = paraMap.get('id');
       this.houseService.detail(id).subscribe(next => {
@@ -51,72 +44,80 @@ export class EditHouseComponent implements OnInit {
       }, error1 => {
         console.log(error1);
       });
-      this.roomService.getList().subscribe(next => {
-        this.rooms = next;
-        console.log(this.rooms);
-      }, error => {
-        console.log(error);
-      });
     });
+  }
+
+  prepareForm() {
     this.editForm = this.fb.group({
-      hostName: ['', [Validators.required]],
-      nameHouse: ['', [Validators.required]],
-      categoryHouse: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      category: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      amountBathRoom: ['', [Validators.required]],
-      amountBedRoom: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
-      rooms: ['', [Validators.required]],
-      description: ['', [Validators.required]]
-    });
-    this.categoryHouse.getList().subscribe(next => {
-      this.listCategoryHouse = next;
     });
   }
 
-  transferFormData() {
-    this.authenticationService.currentUser.subscribe(value => {
-      this.house = {
-        hostName: this.editForm.get('hostName').value,
-        nameHouse: this.editForm.get('nameHouse').value,
-        categoryHouse: {
-          id: this.editForm.get('categoryHouse').value
-        },
-        amountBathRoom: this.editForm.get('amountBathRoom').value,
-        amountBedRoom: this.editForm.get('amountBedRoom').value,
-        address: this.editForm.get('address').value,
-        description: this.editForm.get('description').value,
-        imageUrls: this.arrayPicture
-      };
-      this.userService.userDetail(value.id + '').subscribe(result => {
-        this.house.hostName = result.username;
-      });
+  getListCategory() {
+    this.categoryService.getList().subscribe(next => {
+      this.listCategory = next;
     });
   }
 
+  ngOnInit() {
+    this.getHouse();
+    this.prepareForm();
+    this.getListCategory();
+  }
+
+  getModelCategoryForForm() {
+    if (this.editForm.get('category').value != null) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < this.listCategory.length; i++) {
+        if (this.listCategory[i].id == this.editForm.get('category').value) {
+          this.category = this.listCategory[i];
+        }
+      }
+    }
+  }
+
+  transformData(): House {
+    const house: House = {
+      name: this.editForm.get('name').value,
+      category: this.category,
+      address: this.editForm.get('address').value,
+      imageUrls: this.arrayPicture,
+      createDay: null,
+      theMostNearEditDay: null
+    };
+    return house;
+  }
+
+  checkAndFixNullData(house) {
+    if (house.name === '') {
+      house.name = this.house.name;
+    }
+    if (house.address === '') {
+      house.address = this.house.address;
+    }
+    if (house.category == null) {
+      house.category = this.house.category;
+    }
+    if (house.imageUrls === '') {
+      house.imageUrls = this.house.imageUrls;
+    }
+  }
+  edit(house){
+    this.houseService.edit(house, this.idHouse).subscribe(() => {
+      alert('Sửa thành công!');
+      this.router.navigate(['/']);
+    }, error1 => {
+      this.router.navigate(['/']);
+      console.log('Lỗi ' + error1);
+    });
+  }
   editHouse() {
-    this.authenticationService.currentUser.subscribe(value => {
-      this.userService.userDetail(value.id + '').subscribe(result => {
-        const house: House = {
-          hostName: this.editForm.get('hostName').value,
-          nameHouse: this.editForm.get('nameHouse').value,
-          categoryHouse: {
-            id: this.editForm.get('categoryHouse').value
-          },
-          amountBathRoom: this.editForm.get('amountBathRoom').value,
-          amountBedRoom: this.editForm.get('amountBedRoom').value,
-          address: this.editForm.get('address').value,
-          description: this.editForm.get('description').value,
-          imageUrls: this.arrayPicture
-        };
-        this.houseService.edit(house, this.idHouse).subscribe(() => {
-          alert('Sửa thành công!');
-          this.router.navigate(['/user/house/detail-your-house/' + this.house.id]);
-        }, error1 => {
-          console.log('Lỗi ' + error1);
-        });
-      });
-    });
+    this.getModelCategoryForForm();
+    const house: House = this.transformData();
+    this.checkAndFixNullData(house);
+    this.edit(house);
   }
 
   saveImg(value) {

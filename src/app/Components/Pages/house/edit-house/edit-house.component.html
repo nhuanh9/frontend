@@ -1,6 +1,6 @@
-<div class="row container-fluid mt-3 ml-1" >
+<div class="row container-fluid mt-5 ml-1">
   <div class="col-2"></div>
-  <div class="card text-center register col-lg-8 " style="background: #ffffff !important;">
+  <div class="card text-center register col-lg-8 " style="background: #ffffff !important;color: #233424 !important;">
     <div class=" text-center mt-2">
       <h2>Sửa thông tin nhà </h2>
     </div>
@@ -11,9 +11,10 @@
           <label>Tên nhà </label>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" formControlName="nameHouse" placeholder="Input your house name..." value="{{house.nameHouse}}">
-          <div class="alert alert-danger mt-1" role="alert"
-               *ngIf="editForm.get('nameHouse').invalid && editForm.get('nameHouse').touched">
+          <input type="text" class="form-control" formControlName="name" placeholder="Input your house name..."
+                 value="{{house.name}}">
+          <div class="alert alert-danger mt-1" role="alert" style="background: #8ec67d !important;"
+               *ngIf="editForm.get('name').invalid && editForm.get('name').touched">
             Chưa nhập tên nhà!
           </div>
         </div>
@@ -23,8 +24,8 @@
         <div class="form-group">
           <div class="value text-center">
             <select class="custom-select custom-select-sm"
-                    formControlName="categoryHouse">
-              <option *ngFor="let typeHouse of listCategoryHouse"
+                    formControlName="category">
+              <option *ngFor="let typeHouse of listCategory"
                       [value]="typeHouse.id">{{typeHouse.name}}</option>
             </select>
           </div>
@@ -35,42 +36,9 @@
         <div class="form-group">
           <input type="text" class="form-control" formControlName="address"
                  placeholder="Address ...." value="{{house.address}}">
-          <div class="alert alert-danger mt-1" role="alert"
+          <div class="alert alert-danger mt-1" role="alert" style="background: #8ec67d !important;"
                *ngIf="editForm.get('address').invalid && editForm.get('address').touched">
             Chưa nhập địa chỉ nhà!
-          </div>
-        </div>
-        <div class="text-left">
-          <label>Số lượng phòng tắm</label>
-        </div>
-        <div class="form-group">
-          <input type="number" class="form-control" formControlName="amountBathRoom"
-                 placeholder="Bathrooms ...." value="{{house.amountBathRoom}}">
-          <div class="alert alert-danger mt-1" role="alert"
-               *ngIf="editForm.get('amountBathRoom').invalid && editForm.get('amountBathRoom').touched">
-            Chưa nhập số lượng phòng tắm!
-          </div>
-        </div>
-        <div class="text-left">
-          <label>Số lượng phòng ngủ</label>
-        </div>
-        <div class="form-group">
-          <input type="number" class="form-control" formControlName="amountBedRoom"
-                 placeholder="Bedrooms ...." value="{{house.amountBedRoom}}">
-          <div class="alert alert-danger mt-1" role="alert"
-               *ngIf="editForm.get('amountBedRoom').invalid && editForm.get('amountBedRoom').touched">
-            Chưa nhập số lượng phòng ngủ!
-          </div>
-        </div>
-        <div class="text-left">
-          <label>Mô tả</label>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" formControlName="description"
-                 placeholder="Description ...." value="{{house.description}}">
-          <div class="alert alert-danger mt-1" role="alert"
-               *ngIf="editForm.get('description').invalid && editForm.get('description').touched">
-            Chưa nhập mô tả nhà!
           </div>
         </div>
         <div class="text-left">

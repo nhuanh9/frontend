@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {House} from '../../../../model/House';
 import {HouseService} from '../../../../Services/house.service';
-import {AuthenticationService} from '../../../../Services/authentication.service';
-import {User} from '../../../../model/user';
-import {UserService} from '../../../../Services/user.service';
 
 @Component({
   selector: 'app-list-house',
@@ -15,26 +12,20 @@ export class ListHouseComponent implements OnInit {
   p = 1;
   listHouse: House[];
   nameHouse: string[];
-  currentUser: User;
 
-  constructor(private houseService: HouseService,
-              private authenticationService: AuthenticationService,
-              private userService: UserService) {
+  constructor(private houseService: HouseService) {
   }
 
   ngOnInit() {
+    this.getListHouse();
+  }
+
+  getListHouse() {
     this.houseService.getList().subscribe(result => {
       this.listHouse = result;
     }, error => {
       console.log('Loi!');
     });
-
-    this.authenticationService.currentUser.subscribe(value => {
-      this.userService.userDetail(value.id + '').subscribe(result => {
-        this.currentUser = result;
-      });
-    });
-
   }
 
 }

@@ -4,41 +4,33 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MenuComponent} from './Components/Blocks/menu/menu.component';
-import {UsersComponent} from './Components/Blocks/login/users.component';
 import {HeaderComponent} from './Components/Blocks/header/header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ListHouseComponent} from './Components/Pages/house/list-house/list-house.component';
-import {RegisterComponent} from './Components/Pages/users/register/register.component';
-import {CarouselComponent} from './Components/Blocks/carousel/carousel.component';
-import {FooterComponent} from './Components/Blocks/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { LoginComponent } from './Components/Pages/users/login/login.component';
-import { ListRoomComponent } from './Components/Pages/room/list-room/list-room.component';
-import { UpdateUserProfileComponent } from './Components/Pages/users/update-user-profile/update-user-profile.component';
-import { ListOrderComponent } from './Components/Pages/room/Order/list-order/list-order.component';
-import { ListYourHouseComponent } from './Components/Pages/users/list-your-house/list-your-house.component';
-import { YourOrdersComponent } from './Components/Pages/users/your-orders/your-orders.component';
-import { ProfileComponent } from './Components/Pages/users/profile/profile.component';
-import { ListYourRoomsComponent } from './Components/Pages/users/list-your-rooms/list-your-rooms.component';
-import { DetailYourHouseComponent } from './Components/Pages/users/detail-your-house/detail-your-house.component';
-import { DetailYourRoomsComponent } from './Components/Pages/users/detail-your-rooms/detail-your-rooms.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {CreateHouseComponent} from './Components/Pages/house/create-house/create-house.component';
+import {DetailHouseComponent} from './Components/Pages/house/detail-house/detail-house.component';
+import {EditHouseComponent} from './Components/Pages/house/edit-house/edit-house.component';
+import {CarouselComponent} from './Components/Blocks/carousel/carousel.component';
+import {FooterComponent} from './Components/Blocks/footer/footer.component';
+import { ListVersionComponent } from './Components/Pages/house/list-version/list-version.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    UsersComponent,
     HeaderComponent,
     ListHouseComponent,
-    RegisterComponent,
+    CreateHouseComponent,
+    DetailHouseComponent,
+    EditHouseComponent,
     CarouselComponent,
     FooterComponent,
-    LoginComponent,
-    ListRoomComponent
+    ListVersionComponent
   ],
   imports: [
     BrowserModule,

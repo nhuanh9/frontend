@@ -1,14 +1,11 @@
+import {Category} from './category';
+
 export interface House {
   id?: string;
-  hostName?: string;
-  nameHouse?: string;
-  categoryHouse?: any;
-  // categoryRoom?: string;
-  amountBathRoom?: string;
-  amountBedRoom?: string;
+  name?: string;
+  category?: Category;
   address?: string;
-  description?: string;
+  createDay?: string;
+  theMostNearEditDay?: string;
   imageUrls?: string;
-  rooms?: any;
-  user?: any;
 }

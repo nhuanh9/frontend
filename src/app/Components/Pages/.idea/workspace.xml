@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fc52a6db-cafa-479e-a2f3-0afebcf1b7a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Blocks/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Blocks/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Blocks/footer/footer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/login/users.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/login/users.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/login/users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/login/users.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/menu/menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Blocks/menu/menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/menu/menu.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Blocks/menu/menu.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Blocks/menu/menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Blocks/menu/menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/create-house/create-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/house/create-house/create-house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/create-house/create-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/house/create-house/create-house.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/detail-house/detail-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/house/detail-house/detail-house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/detail-house/detail-house.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/house/detail-house/detail-house.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/detail-house/detail-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/house/detail-house/detail-house.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/edit-house/edit-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/house/edit-house/edit-house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/edit-house/edit-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/house/edit-house/edit-house.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/list-house/list-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/house/list-house/list-house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/list-house/list-house.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/house/list-house/list-house.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/house/list-house/list-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/house/list-house/list-house.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/create-order/create-order.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/create-order/create-order.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/create-order/create-order.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/create-order/create-order.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/list-order/list-order.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/list-order/list-order.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/list-order/list-order.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/Order/list-order/list-order.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/add-room/add-room.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/add-room/add-room.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/add-room/add-room.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/add-room/add-room.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/detail-room/detail-room.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/detail-room/detail-room.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/detail-room/detail-room.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/detail-room/detail-room.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/edit-room/edit-room.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/edit-room/edit-room.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/edit-room/edit-room.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/edit-room/edit-room.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/list-room/list-room.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/list-room/list-room.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/list-room/list-room.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/room/list-room/list-room.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-house/detail-your-house.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-house/detail-your-house.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-house/detail-your-house.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-house/detail-your-house.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-rooms/detail-your-rooms.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-rooms/detail-your-rooms.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-rooms/detail-your-rooms.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/detail-your-rooms/detail-your-rooms.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-house/list-your-house.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-house/list-your-house.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-house/list-your-house.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-house/list-your-house.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-rooms/list-your-rooms.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-rooms/list-your-rooms.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-rooms/list-your-rooms.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/list-your-rooms/list-your-rooms.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/login/login.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/profile/profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/profile/profile.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/profile/profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/profile/profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/register/register.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/update-user-profile/update-user-profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/update-user-profile/update-user-profile.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/update-user-profile/update-user-profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/update-user-profile/update-user-profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/your-orders/your-orders.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/your-orders/your-orders.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/your-orders/your-orders.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/your-orders/your-orders.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/category-house.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Services/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/category-room.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/house.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Services/house.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/order.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/room.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helper/admin-auth-guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helper/auth-guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helper/error-interceptor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helper/jwt-interceptor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/House.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../model/House.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/categoryHouse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../model/category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/categoryRoom.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/comment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/order.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/role.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/room.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/user-token.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../model/userHouse.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module/admin.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module/house.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module/order.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module/room.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module/user.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../../styles.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1YQRJLGws0i05d8UcEcB2a15QJ0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc52a6db-cafa-479e-a2f3-0afebcf1b7a2" name="Default Changelist" comment="" />
+      <created>1582872758313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582872758313</updated>
+      <workItem from="1582872759816" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

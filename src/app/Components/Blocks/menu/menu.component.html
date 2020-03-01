@@ -11,7 +11,7 @@
         <a class="nav-link" routerLink=""> Trang chủ <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Khu vực</a>
+        <a class="nav-link" routerLink="/create-house">Tạo nhà</a>
       </li>
       <li class="nav-item">
         <a class="nav-link">Loại nhà</a>
@@ -23,20 +23,13 @@
 
       </li>
     </ul>
-    <form class="form-inline mr-2" formGroup="search" (ngSubmit)="search()">
-      <input type="text" class="form-control " formControlName="addressSearch" style="color: black !important;">
-      <button type="submit" class="btn btn-outline-light "><i class="fas fa-search"></i></button>
-    </form>
-    <form class="form-inline my-2 my-lg-0" *ngIf="!currentUser">
+<!--    <form class="form-inline mr-2" formGroup="search" (ngSubmit)="search()">-->
+<!--      <input type="text" class="form-control " formControlName="addressSearch" style="color: black !important;">-->
+<!--      <button type="submit" class="btn btn-outline-light "><i class="fas fa-search"></i></button>-->
+<!--    </form>-->
+    <form class="form-inline my-2 my-lg-0">
       <button type="button" class="btn btn-outline-light mr-sm-2 " routerLink="login">Đăng nhập</button>
       <button type="button" class="btn btn-outline-light" routerLink="register">Đăng ký</button>
     </form>
-    <div *ngIf="currentUser">
-      <a (click)="logout()" class="btn btn-outline-light">Đăng suất</a>
-
-      <a [routerLink]="['/user/profile',currentUser.id]" class="btn btn-outline-light ml-2">
-        TTCN
-      </a>
-    </div>
   </div>
 </nav>

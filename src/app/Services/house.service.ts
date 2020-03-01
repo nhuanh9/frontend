@@ -3,13 +3,12 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {House} from '../model/House';
 import {environment} from '../../environments/environment';
-import {Room} from '../model/room';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HouseService {
-  API_URL = environment.apiUrl + '/house';
+  API_URL = environment.apiUrl + 'products';
 
   constructor(private http: HttpClient) {
   }
@@ -18,8 +17,8 @@ export class HouseService {
     return this.http.get<House[]>(this.API_URL);
   }
 
-  create(userId, house): Observable<House> {
-    return this.http.post<House>(this.API_URL + `/user/${userId}`, house);
+  create(house): Observable<House> {
+    return this.http.post<House>(this.API_URL, house);
   }
 
   detail(id: string): Observable<House> {
@@ -32,13 +31,5 @@ export class HouseService {
 
   delete(id: string): Observable<House> {
     return this.http.delete<House>(this.API_URL + `/${id}`);
-  }
-
-  createRoom(idHouse, room): Observable<Room> {
-    return this.http.post<Room>(this.API_URL + `/${idHouse}/room`, room);
-  }
-
-  searchAddress(address): Observable<House> {
-    return this.http.post<House>(this.API_URL + `search`, address);
   }
 }
