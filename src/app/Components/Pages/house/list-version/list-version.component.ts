@@ -65,7 +65,7 @@ export class ListVersionComponent implements OnInit {
     });
   }
 
-  getVersionsOfHouse() {
+  getVersions() {
     this.versionProductService.getList().subscribe(result => {
       this.versions = result;
     }, error => {
@@ -77,7 +77,7 @@ export class ListVersionComponent implements OnInit {
     this.getHouse();
     this.getVariantsOfHouse();
     this.getSelectionsOfHouse();
-    this.getVersionsOfHouse();
+    this.getVersions();
   }
 
   getSelectionOnAVariant(id) {
