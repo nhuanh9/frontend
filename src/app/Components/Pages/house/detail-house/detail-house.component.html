@@ -1,28 +1,30 @@
 <div class="row m-5 detail">
   <div class="col-md-7 ">
-  <div class="imageProduct p-3">
-    <p><u>Home </u> >> <u>{{house.name}}</u></p>
-    <img width="100%" src="{{house.imageUrls}}" class="imgProduct mb-3">
-    <div class="info-house text-center">
-      <div class="mt-2">
-        <button class="btn btn-secondary" [routerLink]="['/edit-house', house.id]">Sửa</button>
-        <button class="btn btn-info ml-3" [routerLink]="['/list-version', house.id]">
-          Danh sách phiên bản
-        </button>
+    <div class="imageProduct p-3">
+      <p><u>Home </u> >> <u>{{house.name}}</u></p>
+      <img width="100%" src="{{house.imageUrls}}" class="imgProduct mb-3">
+      <div class="info-house text-center">
+        <div class="mt-2">
+          <button class="btn btn-secondary" [routerLink]="['/edit-house', house.id]">Sửa</button>
+          <button class="btn btn-info ml-3" [routerLink]="['/list-version', house.id]">
+            Danh sách phiên bản
+          </button>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <div class=" col-md-5 ">
     <div class="order-in-detail row m-1">
       <div class="mt-2 ml-3 mr-3 col-12">
         <b><h2>{{house.name}}</h2></b>
         <p>Địa chỉ: {{house.address}}</p>
+        <p>Ngày tạo: {{house.theMostNearEditDay | date: "dd/MM/yyyy"}}</p>
+        <p>Ngày sửa gần nhất: {{house.theMostNearEditDay | date: "dd/MM/yyyy"}}</p>
       </div>
     </div>
     <div *ngFor="let variant of variants">
       <div class="order-in-detail row m-1" *ngIf="variant.product.id == house.id">
-        <div class="mt-1 ml-1 mr-1 col-12 mb-0" >
+        <div class="mt-1 ml-1 mr-1 col-12 mb-0">
           <b><h5>{{variant.name}}: </h5></b>
         </div>
         <div *ngFor="let selection of selections" class="col-12 ml-5 ">
@@ -34,7 +36,8 @@
           <div class="m-1">
             <form [formGroup]="addSelectionForm" (ngSubmit)="addSelection(variant)" class="form-group ml-1 mr-1">
               <div class="form-group">
-                <input type="textarea" class="form-control" formControlName="selectionName" placeholder="Input new selection...">
+                <input type="textarea" class="form-control" formControlName="selectionName"
+                       placeholder="Input new selection...">
               </div>
               <input type="submit" class="btn btn-primary" value="Thêm tuỳ chọn" style="font-size: 13px">
             </form>
